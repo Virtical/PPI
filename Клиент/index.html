@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запись на мойку</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header class="header">
+        <button class="back-btn">←</button>
+        <h1>Запись на мойку</h1>
+        <button class="menu-btn">⋯</button>
+    </header>
+
+    <div class="carwash-card">
+        <img src="images/car_wash.jpg" alt="Автомойка">
+        <div class="info">
+            <div class="title-row">
+                <h2>Автомойка CarWashGo</h2>
+                <div class="title-row-distance">
+                    <span>0,4 км</span>
+                    <img src="images/location.png" class="icon">
+                </div>
+            </div>
+
+            <div class="rating">
+                <img src="images/star.png" class="icon">
+                <span class="rating-estimation">4.7</span>
+                <img src="images/star.png" class="icon">
+                <img src="images/star.png" class="icon">
+                <img src="images/star.png" class="icon">
+                <img src="images/star.png" class="icon">
+                <span class="rating-count">243</span>
+            </div>
+
+            <div class="address">
+                <img src="images/location.png" class="icon">
+                <span>ул. Ломоносова, 10</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <section>
+            <h3>Выберите услугу</h3>
+
+            <div class="service" data-name="Основная мойка" data-price="800">
+                <span>Основная мойка</span>
+                <div>
+                    <span class="price">800 ₽</span>
+                    <button class="remove-btn">×</button>
+                </div>
+            </div>
+
+            <div class="service" data-name="Уборка салона" data-price="500">
+                <span>Уборка салона</span>
+                <div>
+                    <span class="price">500 ₽</span>
+                    <button class="remove-btn">×</button>
+                </div>
+            </div>
+
+            <button class="add-service">+ Добавить услугу</button>
+        </section>
+    </div>
+
+    <div class="bottom-panel">
+        <h3>Выберите дату и время</h3>
+        <input type="datetime-local" id="datetime">
+
+        <button class="submit-btn" id="submitBtn">
+            Записаться
+        </button>
+    </div>
+</div>
+
+<div class="modal" id="serviceModal">
+    <div class="modal-content">
+        <h3>Выберите услугу</h3>
+        <div id="serviceList"></div>
+        <button class="close-modal">Закрыть</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

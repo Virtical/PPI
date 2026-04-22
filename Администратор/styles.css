@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f6f8;
+    padding: 40px;
+}
+
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/* Модалка */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 420px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Формы */
+.form-group {
+    margin: 15px 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.input-with-suffix {
+    display: flex;
+    align-items: center;
+}
+
+.input-with-suffix input {
+    flex: 1;
+}
+
+.input-with-suffix span {
+    margin-left: 5px;
+}
+
+.time-group {
+    display: flex;
+    gap: 10px;
+}
+
+.time-group div {
+    flex: 1;
+}
+
+.time-group input {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cancel {
+    background: none;
+    border: none;
+    color: #555;
+}
+
+.input-error {
+    border: 2px solid red !important;
+}
+
+.save {
+    background: #ccc;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.save.active {
+    background: #2d6cdf;
+}

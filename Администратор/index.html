@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать акцию</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Создать акцию</h2>
+            <span class="close" onclick="closeModal()">×</span>
+        </div>
+
+        <div class="form-group">
+            <label>Размер скидки</label>
+            <div class="input-with-suffix">
+                <input type="number" id="discount">
+                <span>%</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Расписание</label>
+            <select id="schedule">
+                <option value="">Выберите...</option>
+                <option>Будние дни (Пн–Пт)</option>
+                <option>Выходные</option>
+                <option>Каждый день</option>
+            </select>
+        </div>
+
+        <div class="time-group">
+            <div>
+                <label>Время начала</label>
+                <input type="time" id="startTime">
+            </div>
+            <div>
+                <label>Время окончания</label>
+                <input type="time" id="endTime">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Тип услуги</label>
+            <select id="serviceType">
+                <option value="">Выберите...</option>
+                <option>Все виды мойки</option>
+                <option>Экспресс</option>
+                <option>Полная</option>
+            </select>
+        </div>
+
+        <div class="modal-footer">
+            <button class="cancel" onclick="closeModal()">Отмена</button>
+            <button class="save" id="saveBtn">Сохранить акцию</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
