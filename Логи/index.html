@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель администратора – логи и файлы (демо)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Панель администратора</h1>
+    <div class="tabs">
+        <button class="tab active" data-tab="tree">📂 Дерево файлов</button>
+        <button class="tab" data-tab="stats">📊 Статистика</button>
+        <button class="tab" data-tab="logs">📋 Журнал действий</button>
+    </div>
+
+    <!-- Панель Дерева -->
+    <div id="treePanel" class="panel">
+        <div class="tree-container">
+            <div id="fileTree" class="tree"></div>
+        </div>
+    </div>
+
+    <!-- Панель Статистики -->
+    <div id="statsPanel" class="panel hidden">
+        <div class="stats-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number" id="totalActions">0</div>
+                    <div class="label">Действий за 24 ч</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" id="infoActions">0</div>
+                    <div class="label">Информация</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" id="errorActions">0</div>
+                    <div class="label">Ошибки</div>
+                </div>
+            </div>
+            <h3 style="text-align: center; margin-bottom: 10px;">Активность по часам (последние 24 часа)</h3>
+            <div class="chart-wrapper">
+                <canvas id="chartCanvas" width="750" height="320"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Панель Журнала -->
+    <div id="logsPanel" class="panel hidden">
+        <div class="logs-content">
+            <div class="filter-bar">
+                <label>С:</label>
+                <input type="datetime-local" id="filterFrom">
+                <label>По:</label>
+                <input type="datetime-local" id="filterTo">
+                <label>Уровень:</label>
+                <select id="filterLevel">
+                    <option value="ALL">Все</option>
+                    <option value="INFO">INFO</option>
+                    <option value="ERROR">ERROR</option>
+                </select>
+                <button class="btn" id="applyFilterBtn">Применить фильтр</button>
+                <button class="btn" id="resetFilterBtn">Сбросить</button>
+                <button class="btn primary" id="downloadFilteredBtn">Скачать отфильтрованный лог</button>
+                <button class="btn danger" id="clearLogsBtn">Очистить все логи</button>
+            </div>
+            <table id="logTable">
+                <thead>
+                <tr><th>Время</th><th>Уровень</th><th>Сообщение</th><th>Детали</th></tr>
+                </thead>
+                <tbody id="logTableBody"></tbody>
+            </table>
+            <p id="noLogsMsg" class="empty-msg" style="display:none;">Логов за выбранный период нет.</p>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
